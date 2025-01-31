@@ -8,8 +8,8 @@ class AdminBrand(admin.ModelAdmin):
 
 
 class AdminCar(admin.ModelAdmin):
-    list_display = ['model', 'brand', 'factory_year', 'plate', 'value']
-    search_fields = ['model', 'brand', 'factory_year', 'plate', 'value']
+    list_display = ('model', 'brand', 'factory_year', 'plate', 'value')
+    search_fields = ('model','factory_year', 'plate', 'value')
 
 
 admin.site.register(Brand, AdminBrand)
