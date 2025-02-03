@@ -71,10 +71,19 @@
 <body>
   <header>
     <nav>
+     
       <ul>
+        <li><a href="#">Olá, {{ user.username }}</a></li>
         <li><a href="{% url 'cars_list' %}">Carros</a></li>
+        <li><a href="{% url 'register' %}">Cadastre-se</a></li>
+        {% if user.is_authenticated %}
         <li><a href="{% url 'add_car' %}">Adicionar</a></li>
-      </ul>
+        {% endif %}
+        <li><a href="{% url 'logout' %}">Sair</a></li>
+        
+        
+     </ul>
+      
     </nav>
   </header>
 
