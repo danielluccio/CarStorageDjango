@@ -28,10 +28,10 @@ def login(request):
             return redirect('cars_list')
         else:
             form = AuthenticationForm()
+
     else:
         form = AuthenticationForm()
-    
-    return render(request, 'login.html', {'form': form})
+        return render(request, 'login.html', {'form': form})
 
 
 def logout(request):
