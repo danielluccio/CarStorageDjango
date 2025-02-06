@@ -31,7 +31,7 @@ def login(request):
 
     else:
         form = AuthenticationForm()
-        return render(request, 'login.html', {'form': form})
+    return render(request, 'login.html', {'form': form})
 
 
 def logout(request):
