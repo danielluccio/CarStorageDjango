@@ -30,3 +30,17 @@ class Car(models.Model):
 
     def __str__(self):
         return f"{self.model}"
+    
+
+class CarInvetory(models.Model):
+    cars_count = models.IntegerField(verbose_name="Número de Carros")
+    cars_value = models.DecimalField(max_digits=20, decimal_places=2, verbose_name="Valor total da Mercadoria")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = "Inventario de Carro"
+        verbose_name_plural = "Inventario de Carros"
+
+    def __str__(self):
+        return f"{self.cars_count} - {self.cars_value}"
