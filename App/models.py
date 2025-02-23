@@ -21,7 +21,8 @@ class Car(models.Model):
     model_year = models.PositiveIntegerField(verbose_name="Ano do Modelo")
     plate = models.CharField(max_length=10, blank=False, null=False, verbose_name="Placa do Carro")
     value = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Valor")
-    photo = models.ImageField(upload_to="cars/")
+    photo = models.ImageField(upload_to="cars", blank=True, null=True)
+    bio = models.TextField(blank=True, null=True)
 
 
     class Meta:
