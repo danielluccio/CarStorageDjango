@@ -14,6 +14,17 @@ def car_inventory_update():
     )
 
 
+def car_inventory_delete():
+    cars_count = Car.objects.all().count()
+    cars_value = Car.objects.aggregate(
+        total_value=Sum('value')
+    )['total_value']
+    CarInvetory.objects.create(
+        cars_count=cars_count,
+        cars_value=cars_value
+    )
+
+
 
 
 @receiver(post_save, sender=Car)
